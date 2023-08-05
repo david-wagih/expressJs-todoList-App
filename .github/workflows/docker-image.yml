@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }} # Replace with your Docker Hub access token
 
       - name: Push Docker image to Docker Hub (or any other registry)
-        run: docker push node-express-docker:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/node-express-docker:latest
 
       - name: Set up Docker Compose
         run: docker-compose up -d
