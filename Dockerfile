@@ -6,4 +6,4 @@ RUN npm install
 RUN npm install -g prisma
 COPY . .
 EXPOSE 4000
-CMD ["node", "src/index.js"]
+CMD ["nodemon", "src/server.js"]

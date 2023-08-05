@@ -24,4 +24,4 @@ services:
     depends_on:
       - postgres
     command: >
-      sh -c "npx prisma db push && node src/index.js"
+      sh -c "npx prisma db push && nodemon src/server.js"
