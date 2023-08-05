@@ -17,3 +17,9 @@
 6. Github Actions
 
 ## How to run the project
+
+1. clone the project
+2. cd into the project directory
+3. run `docker-compose up --build` to build the project and run it
+4. the project will be running on port 4000
+5. you can access the project on `http://localhost:4000`
