@@ -33,8 +33,5 @@ jobs:
       - name: Set up Docker Compose
         run: docker-compose up -d
 
-      - name: Run Prisma DB push
-        run: docker-compose exec node-express-docker sh -c "npx prisma db push"
-
       - name: Stop Docker Compose
         run: docker-compose down
