@@ -22,13 +22,13 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }} # Replace with your Docker Hub username
+          username: 1801465 # Replace with your Docker Hub username
           password: ${{ secrets.DOCKERHUB_TOKEN }} # Replace with your Docker Hub access token
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker tag 1801465/node-express-app ${{ secrets.DOCKERHUB_USERNAME }}/node-express-app
-          docker push <${{ secrets.DOCKERHUB_USERNAME }}/node-express-app
+          docker tag 1801465/node-express-app 1801465/node-express-app
+          docker push 1801465/node-express-app
 
       - name: Set up Docker Compose
         run: docker-compose up -d
