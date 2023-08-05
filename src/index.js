@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 // this is the express function that creates an express application
 const app = express();
-const PORT = 8080;
+const PORT = 4000;
 
 // this is the port that the server will be listening to (the server is running on this port without stopping)
 app.listen(PORT, () => {

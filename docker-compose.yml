@@ -1,0 +1,27 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=todoDB
+    ports:
+      - "5432:5432"
+  node-express-docker:
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/todoDB?schema=public
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    expose:
+      - "4000"
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    command: >
+      sh -c "npx prisma db push && node src/index.js"

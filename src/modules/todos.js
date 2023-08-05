@@ -11,8 +11,12 @@ router.use((req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
-  const allTodos = await prisma.todo.findMany();
-  res.json(allTodos);
+  try {
+    const allTodos = await prisma.todo.findMany();
+    res.json(allTodos);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/:todoId", async (req, res) => {
